@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fatimah Zahra | AI &amp; Machine Learning Portfolio</title>
+  <meta name="description" content="Personal portfolio of Fatimah Zahra — Computer Science Engineering student specializing in Artificial Intelligence, Machine Learning, Deep Learning, Computer Vision, and NLP." />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Interactive Neural Network Background Canvas -->
+  <canvas id="neural-canvas" aria-hidden="true"></canvas>
+
+  <!-- Ambient Glow Orbs -->
+  <div class="ambient-glow glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow glow-2" aria-hidden="true"></div>
+
+  <!-- Navigation Header -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#home" class="brand-logo">
+        <span class="logo-mark">FZ</span>
+        <span class="logo-text">Fatimah<span class="accent-dot">.AI</span></span>
+      </a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#ai-assistant" class="nav-link nav-ai-badge">
+          <i data-lucide="sparkles" class="icon-xs"></i> Ask My AI
+        </a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle color theme" title="Switch Dark / Light Theme">
+          <i data-lucide="sun" class="theme-icon-light"></i>
+          <i data-lucide="moon" class="theme-icon-dark"></i>
+        </button>
+        <a href="https://www.linkedin.com/in/fatimah-zahra" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+          <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/Fatimahzahra16" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+          <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+          GitHub
+        </a>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open navigation menu">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="status-pill">
+            <span class="pulse-dot"></span>
+            <span>Available for AI &amp; ML Opportunities</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="gradient-text">Fatimah Zahra</span>
+          </h1>
+
+          <div class="hero-typewriter-wrap">
+            <span class="typewriter-prefix">I build </span>
+            <span class="typewriter-text" id="typewriter-text">Intelligent AI Systems</span>
+            <span class="typewriter-cursor">|</span>
+          </div>
+
+          <p class="hero-description">
+            Computer Science Engineering student at <strong>BMS Institute of Technology and Management</strong> (8.89 CGPA) with a strong foundation in <strong>Artificial Intelligence, Machine Learning, Deep Learning, Computer Vision, and NLP</strong>. Passionate about turning complex data and research into production-ready intelligent applications.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#projects" class="btn btn-primary">
+              <i data-lucide="cpu" class="icon-sm"></i> View AI Projects
+            </a>
+            <a href="#ai-assistant" class="btn btn-secondary">
+              <i data-lucide="bot" class="icon-sm"></i> Talk to My AI Twin
+            </a>
+            <a href="#contact" class="btn btn-ghost">
+              <i data-lucide="mail" class="icon-sm"></i> Contact Me
+            </a>
+          </div>
+
+          <!-- Quick Social & Contact Strip -->
+          <div class="hero-quick-links">
+            <a href="mailto:fz37685@gmail.com" class="quick-chip" title="Send Email">
+              <i data-lucide="mail" class="icon-xs"></i> fz37685@gmail.com
+            </a>
+            <a href="tel:+918630039017" class="quick-chip" title="Call Phone">
+              <i data-lucide="phone" class="icon-xs"></i> +91 8630039017
+            </a>
+            <a href="https://www.linkedin.com/in/fatimah-zahra" target="_blank" rel="noopener noreferrer" class="quick-chip" title="LinkedIn Profile">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://github.com/Fatimahzahra16" target="_blank" rel="noopener noreferrer" class="quick-chip" title="GitHub Profile">
+              <svg class="icon-xs" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+              GitHub
+            </a>
+            <span class="quick-chip">
+              <i data-lucide="map-pin" class="icon-xs"></i> Bengaluru, India
+            </span>
+          </div>
+        </div>
+
+        <!-- Interactive Hero AI Card -->
+        <div class="hero-visual">
+          <div class="profile-ai-card" id="tilt-card">
+            <div class="card-glow-border"></div>
+            <div class="profile-card-header">
+              <div class="window-dots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <span class="mono-badge">fatimah_profile.py</span>
+            </div>
+
+            <div class="profile-avatar-section">
+              <div class="avatar-ring">
+                <div class="avatar-initials">FZ</div>
+                <div class="avatar-badge" title="AI Developer">
+                  <i data-lucide="brain-circuit" class="icon-sm"></i>
+                </div>
+              </div>
+              <div class="profile-meta">
+                <h2>Fatimah Zahra</h2>
+                <p>AI &amp; Machine Learning Developer</p>
+                <div class="location-tag" style="display:flex;align-items:center;gap:0.65rem;margin-top:0.25rem;">
+                  <span style="display:inline-flex;align-items:center;gap:0.25rem;"><i data-lucide="map-pin" class="icon-xs"></i> Bengaluru, India</span>
+                  <a href="https://www.linkedin.com/in/fatimah-zahra" target="_blank" rel="noopener noreferrer" title="LinkedIn" style="color:var(--accent-secondary);display:inline-flex;">
+                    <svg class="icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                  </a>
+                  <a href="https://github.com/Fatimahzahra16" target="_blank" rel="noopener noreferrer" title="GitHub" style="color:var(--text-primary);display:inline-flex;">
+                    <svg class="icon-xs" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="code-snippet-box">
+              <pre><code><span class="c-kw">class</span> <span class="c-cls">AI_Engineer</span>:
+  <span class="c-kw">def</span> <span class="c-fn">__init__</span>(self):
+    self.name = <span class="c-str">"Fatimah Zahra"</span>
+    self.degree = <span class="c-str">"B.E. CSE @ BMSIT&amp;M"</span>
+    self.cgpa = <span class="c-num">8.89</span>
+    self.focus = [<span class="c-str">"Deep Learning"</span>, <span class="c-str">"Computer Vision"</span>, <span class="c-str">"NLP"</span>]</code></pre>
+            </div>
+
+            <div class="hero-stats-grid">
+              <div class="stat-item">
+                <span class="stat-value">8.89<small>/10</small></span>
+                <span class="stat-label">B.E. CSE CGPA</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">3+</span>
+                <span class="stat-label">End-to-End AI Apps</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-value">25+</span>
+                <span class="stat-label">Tech &amp; ML Skills</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT / INTRODUCTION SECTION -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i data-lucide="user-check" class="icon-xs"></i> Introduction</span>
+          <h2 class="section-title">Engineering Intelligent Solutions</h2>
+          <p class="section-subtitle">Combining strong theoretical foundations in Computer Science with hands-on AI &amp; full-stack engineering.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-summary-card glass-card">
+            <h3>Professional Summary</h3>
+            <p>
+              I am a highly motivated <strong>Computer Science Engineering</strong> student at <strong>BMS Institute of Technology and Management, Bengaluru</strong>, with a deep passion for building intelligent software systems that solve real-world problems in healthcare, agriculture, and data analytics.
+            </p>
+            <p>
+              My core expertise spans <strong>Supervised &amp; Unsupervised Machine Learning, Deep Learning (CNNs, Neural Networks), Computer Vision, Natural Language Processing (NLP), and Large Language Models (LLMs)</strong>. Beyond model training and feature engineering, I enjoy architecting full-stack web applications using Python, Flask, React, Node.js, and modern databases so end users can seamlessly interact with AI models.
+            </p>
+            <div class="about-pillars">
+              <div class="pillar-chip">
+                <i data-lucide="eye" class="icon-sm"></i>
+                <div>
+                  <strong>Computer Vision</strong>
+                  <span>CNN image classification &amp; disease detection</span>
+                </div>
+              </div>
+              <div class="pillar-chip">
+                <i data-lucide="mic" class="icon-sm"></i>
+                <div>
+                  <strong>NLP &amp; Voice AI</strong>
+                  <span>Conversational agents, STT/TTS &amp; LLM tool-calling</span>
+                </div>
+              </div>
+              <div class="pillar-chip">
+                <i data-lucide="bar-chart-3" class="icon-sm"></i>
+                <div>
+                  <strong>Data Science &amp; Analytics</strong>
+                  <span>Feature engineering, predictive modeling &amp; dashboards</span>
+                </div>
+              </div>
+              <div class="pillar-chip">
+                <i data-lucide="layers" class="icon-sm"></i>
+                <div>
+                  <strong>Full-Stack AI Delivery</strong>
+                  <span>Web interfaces backed by SQL, MySQL &amp; MongoDB</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-highlights">
+            <div class="highlight-box glass-card">
+              <div class="highlight-icon"><i data-lucide="trophy"></i></div>
+              <div>
+                <h4>HackFest-1.0 National Hackathon</h4>
+                <p>Participated in the HackFest-1.0 National Level Hackathon, collaborating under tight deadlines to prototype innovative technical solutions.</p>
+              </div>
+            </div>
+            <div class="highlight-box glass-card">
+              <div class="highlight-icon"><i data-lucide="graduation-cap"></i></div>
+              <div>
+                <h4>Consistent Academic Excellence</h4>
+                <p>Maintained an 8.89/10 CGPA in B.E. Computer Science Engineering, building on strong foundations from Class XII (85%) and Class X (93%).</p>
+              </div>
+            </div>
+            <div class="highlight-box glass-card">
+              <div class="highlight-icon"><i data-lucide="sparkles"></i></div>
+              <div>
+                <h4>Production-Minded AI Systems</h4>
+                <p>Experienced in taking models out of Jupyter Notebooks into responsive web applications with real database persistence and autonomous workflows.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE SKILLS SECTION -->
+    <section class="section section-alt" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i data-lucide="code-2" class="icon-xs"></i> Technical Arsenal</span>
+          <h2 class="section-title">Interactive Skills Explorer</h2>
+          <p class="section-subtitle">Filter by domain or click any skill badge to see how I apply it across my projects.</p>
+        </div>
+
+        <!-- Category Filter Buttons -->
+        <div class="skills-filter-bar" role="tablist" aria-label="Skill categories">
+          <button class="filter-btn active" data-category="all">All Skills</button>
+          <button class="filter-btn" data-category="ai-ml">Machine Learning &amp; Deep Learning</button>
+          <button class="filter-btn" data-category="languages">Programming &amp; Web</button>
+          <button class="filter-btn" data-category="libraries">Data Science Libraries</button>
+          <button class="filter-btn" data-category="db-tools">Databases &amp; Tools</button>
+        </div>
+
+        <!-- Dynamic Skill Spotlight Banner -->
+        <div class="skill-spotlight glass-card" id="skill-spotlight">
+          <div class="spotlight-icon"><i data-lucide="zap"></i></div>
+          <div class="spotlight-text">
+            <strong id="spotlight-title">Interactive Skill Inspector</strong>
+            <p id="spotlight-desc">Click on any skill card below to inspect my proficiency level and see which projects use that technology.</p>
+          </div>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="skills-domains-grid" id="skills-grid">
+          <!-- Populated dynamically via script.js for rich interactivity -->
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION WITH INTERACTIVE SIMULATORS -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i data-lucide="folder-git-2" class="icon-xs"></i> Featured Work</span>
+          <h2 class="section-title">AI &amp; Data Science Projects</h2>
+          <p class="section-subtitle">Explore my GitHub repositories and try the built-in interactive demos right in your browser.</p>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Voice AI Agent -->
+          <article class="project-card glass-card" data-skills="Python,NLP,JavaScript,HTML,CSS,MySQL,MongoDB,LLMs">
+            <div class="project-banner banner-voice">
+              <div class="banner-badge">Healthcare AI &bull; NLP &amp; Voice</div>
+              <div class="banner-visual">
+                <div class="voice-wave">
+                  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <i data-lucide="mic" class="banner-main-icon"></i>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-title-row">
+                <h3>Voice AI Agent for Healthcare Website</h3>
+                <a href="https://github.com/shutupzunaira/voice-ai-agent" target="_blank" rel="noopener noreferrer" class="icon-link" title="View GitHub Repository">
+                  <i data-lucide="external-link" class="icon-sm"></i>
+                </a>
+              </div>
+
+              <p class="project-desc">
+                An AI-powered medical triage and autonomous appointment scheduling assistant. Integrates Speech Recognition, Natural Language Processing (NLP), Text-to-Speech, and autonomous LLM tool-calling for real-time voice interaction and persistent healthcare booking management.
+              </p>
+
+              <ul class="project-features">
+                <li><i data-lucide="check-circle-2" class="icon-xs"></i> Real-time voice &amp; text symptom triage with emergency escalation</li>
+                <li><i data-lucide="check-circle-2" class="icon-xs"></i> Autonomous tool execution for booking, rescheduling &amp; canceling slots</li>
+                <li><i data-lucide="check-circle-2" class="icon-xs"></i> Responsive web interface backed by MySQL &amp; MongoDB persistence</li>
+              </ul>
+
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">NLP</span>
+                <span class="tag">Speech Recognition / TTS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">HTML &amp; CSS</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">MongoDB</span>
+              </div>
+
+              <div class="project-actions">
+                <button class="btn btn-primary btn-sm" onclick="openProjectDemo('voice')">
+                  <i data-lucide="play" class="icon-xs"></i> Interactive Demo
+                </button>
+                <a href="https://github.com/shutupzunaira/voice-ai-agent" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                  <svg class="icon-xs" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                  GitHub Repo
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Agro AI -->
+          <article class="project-card glass-card" data-skills="Python,Machine Learning,Computer Vision,CNN,PyTorch,Scikit-learn,HTML,CSS,JavaScript,SQL">
+            <div class="project-banner banner-agro">
+              <div class="banner-badge">Smart Agriculture &bull; CV &amp; ML</div>
+              <div class="banner-visual">
+                <div class="scan-grid-effect"></div>
+                <i data-lucide="sprout" class="banner-main-icon"></i>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div class="project-title-row">
+                <h3>Agro AI Smart Farming Platform</h3>
+                <a href="https://github.com/shutupzunaira/agro-ai" target="_blank" rel="noopener noreferrer" class="icon-link" title="View GitHub Repository">
+                  <i data-lucide="external-link" class="icon-sm"></i>
+                </a>
+              </div>
+
+              <p class="project-desc">
+                Full-stack AI-powered smart farming web application for crop disease detection, weed identification, and soil-based crop recommendations. Combines Computer Vision leaf analysis with Random Forest predictive models and interactive farmer dashboards.
+              </p>
+
+              <ul class="project-features">
+                <li><i data-lucide="check-circle-2" class="icon-xs"></i> Leaf disease &amp; weed detection using Computer Vision &amp; PyTorch CNN</li>
+                <li><i data-lucide="check-circle-2" class="icon-xs"></i> Intelligent crop recommendation engine using N-P-K, pH, temp &amp; rainfall</li>
+                <li><i data-lucide="check-circle-2" class="icon-xs"></i> Secure farmer authentication, soil history tracking &amp; agricultural blog</li>
+              </ul>
+
+              <div class="project-tags">
+                <span class="tag">Python (Flask)</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Computer Vision (CNN)</span>
+                <span class="tag">Scikit-learn &amp; PyTorch</span>
+                <span class="tag">HTML / CSS / JS</span>
+                <span class="tag">SQL</span>
+              </div>
+
+              <div class="project-actions">
+                <button class="btn btn-primary btn-sm" onclick="openProjectDemo('agro')">
+                  <i data-lucide="play" class="icon-xs"></i> Interactive Demo
+                </button>
+                <a href="https://github.com/shutupzunaira/agro-ai" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">
+                  <svg class="icon-xs" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+                  GitHub Repo
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE AI PORTFOLIO ASSISTANT SECTION -->
+    <section class="section section-alt" id="ai-assistant">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i data-lucide="sparkles" class="icon-xs"></i> AI-Powered Feature</span>
+          <h2 class="section-title">Ask Fatimah's AI Portfolio Assistant</h2>
+          <p class="section-subtitle">Have a question about my skills, education, or GitHub projects? Ask my interactive AI assistant below (supports voice output!).</p>
+        </div>
+
+        <div class="ai-chat-container glass-card">
+          <div class="ai-chat-header">
+            <div class="ai-agent-info">
+              <div class="ai-avatar-pulse">
+                <i data-lucide="bot"></i>
+              </div>
+              <div>
+                <h3>FZ-Assistant v2.5</h3>
+                <span class="ai-status-text">Trained on Fatimah Zahra's Resume &amp; GitHub Repositories</span>
+              </div>
+            </div>
+            <div class="ai-header-controls">
+              <button class="btn btn-ghost btn-sm" id="toggle-tts-btn" title="Toggle Voice Readout">
+                <i data-lucide="volume-2" class="icon-xs"></i> <span id="tts-status-label">Voice: Off</span>
+              </button>
+              <button class="btn btn-ghost btn-sm" id="clear-chat-btn" title="Reset Conversation">
+                <i data-lucide="rotate-ccw" class="icon-xs"></i> Reset
+              </button>
+            </div>
+          </div>
+
+          <div class="ai-chat-messages" id="ai-chat-messages" aria-live="polite">
+            <div class="chat-msg bot-msg">
+              <div class="msg-avatar"><i data-lucide="bot" class="icon-xs"></i></div>
+              <div class="msg-bubble">
+                Hello! 👋 I'm <strong>Fatimah Zahra's AI Portfolio Assistant</strong>. You can ask me anything about her <strong>AI/ML skills</strong>, her <strong>Voice AI Agent</strong> &amp; <strong>Agro AI</strong> projects, her <strong>education at BMSIT&amp;M</strong>, or how to <strong>get in touch</strong>. Click a prompt below or type your own question!
+              </div>
+            </div>
+          </div>
+
+          <div class="ai-prompt-chips" id="ai-prompt-chips">
+            <button class="prompt-chip" data-prompt="Tell me about Fatimah's AI projects">🚀 Explain her AI projects</button>
+            <button class="prompt-chip" data-prompt="How does the Voice AI Agent for Healthcare work?">🩺 Voice AI Healthcare Agent</button>
+            <button class="prompt-chip" data-prompt="How does Agro AI detect crop diseases?">🌱 Agro AI Smart Farming</button>
+            <button class="prompt-chip" data-prompt="What are Fatimah's technical skills in ML and Deep Learning?">🧠 Technical Skills &amp; ML Stack</button>
+            <button class="prompt-chip" data-prompt="What is Fatimah's education and CGPA?">🎓 Education &amp; CGPA</button>
+            <button class="prompt-chip" data-prompt="How can I contact Fatimah Zahra?">📬 Contact Details</button>
+          </div>
+
+          <form class="ai-chat-input-bar" id="ai-chat-form">
+            <button type="button" class="mic-input-btn" id="voice-input-btn" title="Speak your question">
+              <i data-lucide="mic" class="icon-sm"></i>
+            </button>
+            <input
+              type="text"
+              id="ai-chat-input"
+              placeholder="Ask about Fatimah's projects, Python/ML skills, education, or contact info..."
+              autocomplete="off"
+              required
+            />
+            <button type="submit" class="btn btn-primary">
+              <i data-lucide="send" class="icon-xs"></i> Ask AI
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION & ACHIEVEMENTS SECTION -->
+    <section class="section" id="education">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i data-lucide="award" class="icon-xs"></i> Academic &amp; Milestones</span>
+          <h2 class="section-title">Education &amp; Achievements</h2>
+          <p class="section-subtitle">Strong academic track record paired with national hackathon participation and practical AI engineering.</p>
+        </div>
+
+        <div class="edu-achieve-grid">
+          <!-- Education Timeline -->
+          <div class="timeline-column">
+            <h3 class="column-heading"><i data-lucide="graduation-cap" class="icon-sm"></i> Education</h3>
+            <div class="timeline">
+              <div class="timeline-item glass-card">
+                <div class="timeline-dot"></div>
+                <span class="timeline-badge">Present &bull; CGPA: 8.89 / 10</span>
+                <h4>B.E. in Computer Science Engineering</h4>
+                <p class="timeline-inst">BMS Institute of Technology and Management, Bengaluru</p>
+                <p class="timeline-detail">
+                  Focusing on Artificial Intelligence, Machine Learning, Deep Learning, Data Structures &amp; Algorithms, Database Management Systems, and Software Engineering.
+                </p>
+              </div>
+
+              <div class="timeline-item glass-card">
+                <div class="timeline-dot"></div>
+                <span class="timeline-badge">Score: 85%</span>
+                <h4>Higher Secondary Education (Class XII)</h4>
+                <p class="timeline-detail">
+                  Strong foundation in Mathematics, Physics, Chemistry, and Computer Science fundamentals.
+                </p>
+              </div>
+
+              <div class="timeline-item glass-card">
+                <div class="timeline-dot"></div>
+                <span class="timeline-badge">Score: 93%</span>
+                <h4>Secondary School Education (Class X)</h4>
+                <p class="timeline-detail">
+                  Graduated with distinction (93%), demonstrating consistent academic dedication and analytical aptitude.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Achievements & Core Competencies -->
+          <div class="achievements-column">
+            <h3 class="column-heading"><i data-lucide="medal" class="icon-sm"></i> Achievements &amp; Activities</h3>
+            <div class="achievement-cards">
+              <div class="ach-card glass-card">
+                <div class="ach-icon"><i data-lucide="flame"></i></div>
+                <div>
+                  <h4>HackFest-1.0 National Level Hackathon</h4>
+                  <p>Active participant in the HackFest-1.0 National Level Hackathon, building rapid AI-driven solutions in a competitive engineering environment.</p>
+                </div>
+              </div>
+
+              <div class="ach-card glass-card">
+                <div class="ach-icon"><i data-lucide="star"></i></div>
+                <div>
+                  <h4>8.89 / 10 CGPA in Computer Science Engineering</h4>
+                  <p>Consistently maintained top-tier academic standing at BMS Institute of Technology and Management while building real-world software projects.</p>
+                </div>
+              </div>
+
+              <div class="ach-card glass-card">
+                <div class="ach-icon"><i data-lucide="cpu"></i></div>
+                <div>
+                  <h4>End-to-End AI Application Builder</h4>
+                  <p>Designed and developed full-stack intelligent software platforms across Healthcare (Voice AI Agent) and Smart Agriculture (Agro AI) using Python, Machine Learning, NLP, and Computer Vision.</p>
+                </div>
+              </div>
+
+              <div class="ach-card glass-card">
+                <div class="ach-icon"><i data-lucide="users"></i></div>
+                <div>
+                  <h4>Analytical Thinking &amp; Collaborative Leadership</h4>
+                  <p>Strong problem-solving, analytical reasoning, cross-functional teamwork, and technical communication skills.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT & SOCIAL SHARE SECTION -->
+    <section class="section section-alt" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag"><i data-lucide="send" class="icon-xs"></i> Get In Touch</span>
+          <h2 class="section-title">Contact Details &amp; Connect</h2>
+          <p class="section-subtitle">Seeking opportunities to contribute to cutting-edge AI research, internships, and production-level machine learning systems.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Contact Info Cards -->
+          <div class="contact-info-list">
+            <div class="contact-card glass-card">
+              <div class="contact-icon"><i data-lucide="mail"></i></div>
+              <div class="contact-details">
+                <span>Email Address</span>
+                <a href="mailto:fz37685@gmail.com">fz37685@gmail.com</a>
+              </div>
+              <button class="copy-btn" data-copy="fz37685@gmail.com" title="Copy Email">
+                <i data-lucide="copy" class="icon-xs"></i>
+              </button>
+            </div>
+
+            <div class="contact-card glass-card">
+              <div class="contact-icon"><i data-lucide="phone"></i></div>
+              <div class="contact-details">
+                <span>Phone Number</span>
+                <a href="tel:+918630039017">+91 8630039017</a>
+              </div>
+              <button class="copy-btn" data-copy="8630039017" title="Copy Phone">
+                <i data-lucide="copy" class="icon-xs"></i>
+              </button>
+            </div>
+
+            <div class="contact-card glass-card">
+              <div class="contact-icon"><i data-lucide="map-pin"></i></div>
+              <div class="contact-details">
+                <span>Location</span>
+                <strong>Bengaluru, Karnataka, India</strong>
+              </div>
+            </div>
+
+            <div class="contact-card glass-card">
+              <div class="contact-icon">
+                <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+              </div>
+              <div class="contact-details">
+                <span>LinkedIn Profile</span>
+                <a href="https://www.linkedin.com/in/fatimah-zahra" target="_blank" rel="noopener noreferrer">linkedin.com/in/fatimah-zahra</a>
+              </div>
+              <a href="https://www.linkedin.com/in/fatimah-zahra" target="_blank" rel="noopener noreferrer" class="copy-btn" title="Open LinkedIn">
+                <i data-lucide="external-link" class="icon-xs"></i>
+              </a>
+            </div>
+
+            <div class="contact-card glass-card">
+              <div class="contact-icon">
+                <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+              </div>
+              <div class="contact-details">
+                <span>GitHub Profile</span>
+                <a href="https://github.com/Fatimahzahra16" target="_blank" rel="noopener noreferrer">github.com/Fatimahzahra16</a>
+              </div>
+              <a href="https://github.com/Fatimahzahra16" target="_blank" rel="noopener noreferrer" class="copy-btn" title="Open GitHub">
+                <i data-lucide="external-link" class="icon-xs"></i>
+              </a>
+            </div>
+
+            <!-- Social Share Card (Helpful for InAmigos Foundation Task!) -->
+            <div class="share-card glass-card">
+              <div class="share-header">
+                <i data-lucide="share-2" class="icon-sm"></i>
+                <div>
+                  <h4>Share Portfolio on LinkedIn</h4>
+                  <p>One-click post generator for sharing your live AI profile website.</p>
+                </div>
+              </div>
+              <div class="share-actions">
+                <button class="btn btn-primary btn-sm" id="share-linkedin-btn">
+                  <svg class="icon-xs" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+                  Prepare LinkedIn Post
+                </button>
+                <button class="btn btn-outline btn-sm" id="copy-site-link-btn">
+                  <i data-lucide="link" class="icon-xs"></i> Copy Website Link
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Contact Form -->
+          <div class="contact-form-card glass-card">
+            <h3>Send a Direct Message</h3>
+            <p>Fill out the form below and it will compose a ready-to-send message to Fatimah.</p>
+            <form id="contact-form">
+              <div class="form-group">
+                <label for="sender-name">Your Name</label>
+                <input type="text" id="sender-name" placeholder="e.g., Recruiter / Team Lead" required />
+              </div>
+              <div class="form-group">
+                <label for="sender-email">Your Email</label>
+                <input type="email" id="sender-email" placeholder="name@company.com" required />
+              </div>
+              <div class="form-group">
+                <label for="sender-subject">Subject</label>
+                <input type="text" id="sender-subject" placeholder="AI/ML Opportunity or Project Collaboration" required />
+              </div>
+              <div class="form-group">
+                <label for="sender-message">Message</label>
+                <textarea id="sender-message" rows="4" placeholder="Hi Fatimah, I reviewed your AI portfolio and would love to connect..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary btn-full">
+                <i data-lucide="send" class="icon-xs"></i> Send Message
+              </button>
+              <div id="form-feedback" class="form-feedback" hidden></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="logo-mark">FZ</span>
+        <div>
+          <strong>Fatimah Zahra</strong>
+          <p>Computer Science Engineering &bull; AI &amp; Machine Learning Portfolio</p>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/fatimah-zahra" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:0.35rem;">
+          <svg class="icon-xs" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://github.com/Fatimahzahra16" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:0.35rem;">
+          <svg class="icon-xs" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+          GitHub
+        </a>
+        <a href="https://github.com/shutupzunaira/voice-ai-agent" target="_blank" rel="noopener noreferrer">Voice AI Agent</a>
+        <a href="https://github.com/shutupzunaira/agro-ai" target="_blank" rel="noopener noreferrer">Agro AI</a>
+        <a href="mailto:fz37685@gmail.com">Email</a>
+      </div>
+      <p class="footer-copy">&copy; 2026 Fatimah Zahra. Built with AI-assisted interactive web technologies.</p>
+    </div>
+  </footer>
+
+  <!-- INTERACTIVE PROJECT DEMO MODAL -->
+  <div class="modal-backdrop" id="demo-modal" hidden>
+    <div class="modal-window glass-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-header">
+        <h3 id="modal-title">Interactive Project Simulator</h3>
+        <button class="modal-close" id="modal-close-btn" aria-label="Close modal">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+      <div class="modal-body" id="modal-body">
+        <!-- Populated dynamically by script.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" hidden>Copied to clipboard!</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
