@@ -897,7 +897,7 @@ a.quick-chip:hover {
    ========================================================================== */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
@@ -1703,12 +1703,21 @@ a.quick-chip:hover {
     right: 0;
     background: var(--bg-secondary);
     flex-direction: column;
-    padding: 1rem;
+    align-items: stretch;
+    padding: 1rem 1.25rem;
+    gap: 0.35rem;
     border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow-lg);
   }
 
   .nav-links.open {
     display: flex;
+  }
+
+  .nav-link {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    width: 100%;
   }
 
   .mobile-menu-btn {
@@ -1716,9 +1725,167 @@ a.quick-chip:hover {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
+  .container {
+    padding: 0 1.1rem;
+  }
+
+  .section {
+    padding: 3.75rem 0;
+  }
+
+  .hero-section {
+    padding: 6.5rem 0 3.25rem;
+    min-height: auto;
+  }
+
+  /* Compact icon-only social buttons in mobile header to prevent crowding */
+  .nav-actions .btn-outline {
+    font-size: 0;
+    gap: 0;
+    padding: 0.5rem;
+    width: 38px;
+    height: 38px;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 8vw, 2.6rem);
+  }
+
+  .hero-typewriter-wrap {
+    font-size: 1.15rem;
+    min-height: 2rem;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
+  }
+
+  .hero-quick-links {
+    gap: 0.5rem;
+  }
+
+  .quick-chip {
+    font-size: 0.78rem;
+    padding: 0.38rem 0.65rem;
+  }
+
+  .profile-ai-card {
+    padding: 1.15rem;
+  }
+
+  .profile-avatar-section {
+    gap: 0.85rem;
+  }
+
+  .avatar-ring {
+    width: 60px;
+    height: 60px;
+  }
+
+  .code-snippet-box {
+    padding: 0.75rem;
+  }
+
+  .code-snippet-box pre {
+    font-size: 0.72rem;
+  }
+
+  .stat-value {
+    font-size: 1.15rem;
+  }
+
+  .about-summary-card,
+  .contact-form-card {
+    padding: 1.35rem;
+  }
+
   .about-pillars,
-  .sim-controls-grid {
+  .sim-controls-grid,
+  .skills-domains-grid {
     grid-template-columns: 1fr;
+  }
+
+  .skill-spotlight {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 1.15rem;
+  }
+
+  .project-body {
+    padding: 1.25rem;
+  }
+
+  .project-actions {
+    flex-direction: column;
+  }
+
+  .project-actions .btn {
+    width: 100%;
+  }
+
+  .ai-chat-header,
+  .ai-chat-messages,
+  .ai-prompt-chips,
+  .ai-chat-input-bar {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .ai-chat-messages {
+    height: 260px;
+  }
+
+  .chat-msg {
+    max-width: 94%;
+  }
+
+  /* Prevent iOS Safari zoom on input focus */
+  .ai-chat-input-bar input,
+  .form-group input,
+  .form-group textarea {
+    font-size: 16px;
+  }
+
+  .contact-card {
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+
+  .contact-details a,
+  .contact-details strong {
+    font-size: 0.88rem;
+    word-break: break-word;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-brand {
+    flex-direction: column;
+  }
+
+  .footer-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.9rem;
+  }
+
+  .modal-window {
+    padding: 1.2rem;
+    max-height: 90vh;
+  }
+
+  .toast {
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    text-align: center;
   }
 }
